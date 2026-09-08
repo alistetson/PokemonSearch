@@ -22,4 +22,9 @@ class PokeApiRepo {
     );
     return pokemon;
   }
+
+  Future<List<NamedApiResource>?> getAllList() async =>
+      await _pokeApiClient.getAllPokemonResources();
+
+  void close() => _pokeApiClient.dispose();
 }

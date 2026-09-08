@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'pokemanlist_states.dart';
+part of 'pokemonlist_states.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -17,7 +17,9 @@ PokemonListState _$PokemonListStateFromJson(Map<String, dynamic> json) =>
           'pokemons',
           (v) =>
               (v as List<dynamic>?)
-                  ?.map((e) => Pokemon.fromJson(e as Map<String, dynamic>))
+                  ?.map(
+                    (e) => NamedApiResource.fromJson(e as Map<String, dynamic>),
+                  )
                   .toList() ??
               const [],
         ),

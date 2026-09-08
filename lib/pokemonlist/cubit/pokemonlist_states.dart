@@ -1,15 +1,15 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:pokemonsearch/repo/pokeapi_repo/pokeapi_repo.dart';
+import 'package:pokemonsearch/repo/pokeapi_client/pokeapi_client.dart';
 
-part 'pokemanlist_states.g.dart';
+part 'pokemonlist_states.g.dart';
 
 enum PokemonListStatus { intial, loading, success, failure }
 
 @JsonSerializable()
 final class PokemonListState extends Equatable {
   final PokemonListStatus status;
-  final List<Pokemon> pokemons;
+  final List<NamedApiResource> pokemons;
 
   const PokemonListState({this.status = .intial, this.pokemons = const []});
 
@@ -18,7 +18,7 @@ final class PokemonListState extends Equatable {
 
   PokemonListState copyWith({
     PokemonListStatus? status,
-    List<Pokemon>? pokemons,
+    List<NamedApiResource>? pokemons,
   }) {
     return PokemonListState(
       status: status ?? this.status,
